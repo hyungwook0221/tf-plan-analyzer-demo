@@ -51,8 +51,8 @@ data "aws_ssm_parameter" "ecs_optimized_ami_linux_2023" {
 }
 
 resource "aws_instance" "ecs" {
-  ami           = jsondecode(data.aws_ssm_parameter.ecs_optimized_ami_linux_2023.value)["image_id"]
-  # ami           = jsondecode(data.aws_ssm_parameter.ecs_optimized_ami_linux_2.value)["image_id"]
+  # ami           = jsondecode(data.aws_ssm_parameter.ecs_optimized_ami_linux_2023.value)["image_id"]
+  ami           = jsondecode(data.aws_ssm_parameter.ecs_optimized_ami_linux_2.value)["image_id"]
   instance_type = "t3.micro"
 
   network_interface {
